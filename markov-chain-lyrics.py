@@ -1,6 +1,7 @@
 import re #REGEX library
 import urllib.request #Open URLs
 import markovify #Generate a Markov chain
+from time import sleep #Needed to avoid ban from alyrics
 
 #Find all links on an artist's AZLyrics page
 originalLyrics = open('lyrics.txt', 'w')
@@ -34,6 +35,7 @@ for x in songLinks:
     lyrics = lyrics.replace('</i>', '')
     lyrics = lyrics.replace('[Chorus]', '')
     originalLyrics.write(lyrics)
+    sleep (random.randint(2, 10))
 originalLyrics.close() #We close the file because we no longer have to write anything to it
 
 #Generate new lyrics using a Markov Chain
