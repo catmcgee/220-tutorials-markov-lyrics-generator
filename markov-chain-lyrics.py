@@ -1,6 +1,7 @@
 import re #REGEX library
 import urllib.request #Open URLs
 import markovify #Generate a Markov chain
+import random
 from time import sleep #Needed to avoid ban from alyrics
 
 #Find all links on an artist's AZLyrics page
